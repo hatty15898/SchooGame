@@ -9,7 +9,7 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Desktop.json", {onProgress: UnityProgress});
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/SchoolGamee.json", {onProgress: UnityProgress});
     </script>
   </head>
   <body>
@@ -22,4 +22,19 @@
       </div>
     </div>
   </body>
+  
+  <script>
+		function FixInputOnSubmit() {
+			document.getElementById("fixInput").blur();
+			event.preventDefault();
+		}
+	</script>
+    <div>
+		<form onsubmit="FixInputOnSubmit()" autocomplete="off" style="width: 0px; height: 0px; position: absolute; top: -9999px;">
+			<input type="text" id="fixInput" oninput="gameInstance.Module.ccall('FixInputUpdate', null)" onblur="gameInstance.Module.ccall('FixInputOnBlur', null)" style="font-size: 42px;">
+		</form>
+	</div>
+
+  
+  
 </html>
